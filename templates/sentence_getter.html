@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <form method="POST">
+    <h3 class="header">Let's create a sentence</h3>
+    <div class="box">
+        <form method="POST" action="{{ url_for('main.statistics')}}">
+            <div class="field">
+                    <textarea class="form-control" name="sentence" placeholder="Type here" autofocus=""></textarea>
+            </div>
+            <div class="mb-3">
+            <button class="btn btn-primary" type=submit>Save <span title="Submit"></span></button>
+            </div>
+        </form>
+    </div>
+    </form>
+</div>
+{% endblock %}

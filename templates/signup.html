@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="header">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <span class="text-bg-warning p-3">{{ messages[0] }}.
+        Go to <a href="{{ url_for('auth.login') }}">login page</a>.</span>
+    {% endif %}
+    {% endwith %}
+    <form method="POST" action="/signup">
+    <h3 class="title">Sign Up</h3>
+    <div class="box">
+        <form method="POST" action="/signup">
+            <div class="mb-3">
+                <div class="control">
+                    <input class="form-control" type="email" name="email" placeholder="Email" autofocus="">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="control">
+                    <input class="form-control" type="text" name="name" placeholder="Name" autofocus="">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <div class="control">
+                    <input class="form-control" type="password" name="password" placeholder="Password">
+                </div>
+            </div>
+
+            <button class="btn btn-primary">Sign Up</button>
+        </form>
+    </div>
+    </form>
+</div>
+{% endblock %}

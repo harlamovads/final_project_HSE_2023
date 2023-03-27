@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <h2 class="header">Results</h2>
+    <div>
+        <h2>Your input:</h2>
+        <div class="mb-3">
+        <span class="text-bg-primary p-2"> {{sentence}} </span>
+        </div>
+    </div>
+    <div>
+        <h5>Syntactic parser</h5>
+        {{ result|markdown }}
+    </div>
+    <div class="column">
+        <h5>Morphological parser</h5>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+    </div>
+    <div>
+        <h5>The emotion of the sentence</h5>
+        The emotion of the sentence is {{ emotion }}
+    </div>
+</div>
+{% endblock %}
