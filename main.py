@@ -43,7 +43,7 @@ def dataframe(spacy_doc):
 
 
 API_URL = "https://api-inference.huggingface.co/models/Zlovoblachko/en_pipeline"
-API_TOKEN = "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"
+API_TOKEN = "TOKEN-NAME-HERE"
 headers = {"Authorization": f"Bearer {API_TOKEN}", "X-Wait-For-Model": "true" }
 
 
